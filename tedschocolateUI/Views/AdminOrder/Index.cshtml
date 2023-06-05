@@ -1,0 +1,53 @@
+﻿@model  List<SendMessage>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Sipariş Tablosu</h4>
+            <p class="card-description">
+                Sipariş ve  İletişim
+            </p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> Sipariş veren adı </th>
+                        <th>Maili </th>
+                        <th> Telefonu </th>
+                        <th> Çikolata dış rengi </th>
+                        <th> İç dolgusu </th>
+                        <th> Adet </th>
+                        <th> Sipariş Detay</th>
+                        <th> Tamamlandı</th>
+                   
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        
+                  
+                    <tr>
+                     
+                            <td> @item.Name </td>
+                            <td> @item.Email</td>
+                            <td> @item.Phone</td>
+                            <td> @item.Color</td>
+                            <td> @item.filling</td>
+                            <td> @item.piece</td>
+                            <td> <a href="/AdminOrder/Details/@item.SendMessageid" class="btn btn-gradient-dark btn-rounded btn-fw">Detay</a>  </td>
+                            <td> <a href="/AdminOrder/DeleteSend/@item.SendMessageid" class="btn btn-gradient-success btn-rounded btn-fw">Tamamlandı</a>  </td>
+                      
+                    
+                    </tr>
+                    }
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

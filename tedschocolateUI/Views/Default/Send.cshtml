@@ -1,0 +1,111 @@
+﻿@model EntityLayer.Concrete.SendMessage
+
+
+
+
+
+<script src="~/chocolux-master/js/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/chocolux-master/js/settimeout().js"></script>
+<style>
+    .error-message {
+        color: red;
+       
+    }
+</style>
+
+<section id="gtco-reservation" class="bg-fixed bg-white section-padding overlay" style="background-color:#5a2918">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-content bg-white p-5 shadow">
+                    <div class="heading-section text-center">
+                        <span class="subheading">
+                            Request
+                        </span>
+                        <h2>
+                            ORDER
+                        </h2>
+
+                    </div>
+                    @using (Html.BeginForm("Send", "Default", FormMethod.Post))
+                    {
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                @Html.TextBoxFor(x=>x.Name,new{ @class = "form-control custom-class", placeholder = "Name" })
+                                @Html.ValidationMessageFor(x=>x.Name, "", new { @class = "error-message" })
+                               @* <input type="text" class="form-control" id="name" name="name" placeholder="Name">*@
+                            </div>
+                            <div class="col-md-12 form-group">
+                                @Html.TextBoxFor(x=>x.Email,new{ @class = "form-control custom-class", placeholder = "Email" })
+                                @Html.ValidationMessageFor(x=>x.Email, "", new { @class = "error-message" })
+                              @*  <input type="text" class="form-control" id="email" name="Email" placeholder="Email">*@
+                            </div>
+                            <div class="col-md-12 form-group">
+                                @Html.TextBoxFor(x=>x.Phone,new{ @class = "form-control custom-class", placeholder = "Phone" })
+                                @Html.ValidationMessageFor(x=>x.Phone, "", new { @class = "error-message" })
+                             @*   <input type="number" class="form-control" id="phoneNumber" name="Phone" placeholder="Phone">*@
+                            </div>
+                            <div class="col-md-12 form-group">
+                                @Html.TextBoxFor(x=>x.Color,new{ @class = "form-control custom-class", placeholder = "color " })
+                                @Html.ValidationMessageFor(x=>x.Color, "", new { @class = "error-message" })
+                              @*  <input type="text" class="form-control" id="name" name="Color" placeholder="Color">*@
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                @Html.TextBoxFor(x=>x.filling,new{ @class = "form-control custom-class", placeholder = "fiiling" })
+                                @Html.ValidationMessageFor(x=>x.filling, "", new { @class = "error-message" })
+                           @*     <input type="text" class="form-control" id="name" name="filling" placeholder="filling">*@
+                            </div>
+                           
+                            <div class="col-md-12 form-group">
+                                <div class="date" id="date1" data-target-input="nearest">
+                                    @Html.TextBoxFor(x=>x.Time,new{ @class = "form-control custom-class",type = "time", placeholder = "Time" })
+                                    @Html.ValidationMessageFor(x=>x.Time, "", new { @class = "error-message" })
+                                @*    <input type="time" class="form-control" placeholder="Select time" data-target="#date1" data-toggle="date" name="Time" />*@
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <div class="date" id="date1" data-target-input="nearest">
+                                    @Html.TextBoxFor(x=>x.DateTime,"{0:yyyy-MM-dd}",new{ @class = "form-control custom-class",type = "date", placeholder = "DateTime" })
+                                    @Html.ValidationMessageFor(x=>x.DateTime, "", new { @class = "error-message" })
+                                 @*   <input type="date" class="form-control" placeholder="Select date" name="    DateTime" data-target="#date1" data-toggle="DateTime" />*@
+                                </div>
+                            </div>
+
+
+                            <br />
+
+                            <div class="col-md-12 form-group">
+                                @Html.TextBoxFor(x=>x.piece,new{ @class = "form-control custom-class", placeholder = "Piece" })
+                                @Html.ValidationMessageFor(x=>x.piece, "", new { @class = "error-message" })
+                               @* <select class="form-control" id="piece" name="piece">
+                                    <option></option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>*@
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                             @*   @Html.TextAreaFor(x=>x.DateTime,new{ @class = "form-control custom-class", placeholder = "Description..." })
+                                @Html.ValidationMessageFor(x=>x.DateTime, "", new { @class = "error-message" })*@
+                                <textarea class="form-control" id="message" name="description" rows="6" placeholder="Your Message ..."></textarea>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <button class="btn btn-primary btn-shadow btn-lg"  id="open-btn"> Order</button>
+                       
+                            </div>
+
+                         
+                          
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

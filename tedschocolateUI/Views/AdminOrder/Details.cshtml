@@ -1,0 +1,52 @@
+﻿@model EntityLayer.Concrete.SendMessage
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Details", "AdminOrder", FormMethod.Post))
+{
+    
+<div class="col-md-12 stretch-card">
+    <div class="card">
+        <div class="card-body">
+                <h4 class="text-danger">Mesaj Detayları</h4>
+               
+                @Html.HiddenFor(x=>x.SendMessageid)
+                <br />
+                <label class="text-warning">Sipariş Veren Adı</label>
+                @Html.TextBoxFor(x=>x.Name,new{@class="form-control"})
+                <br />
+                <label class="text-warning">Mail</label>
+                @Html.TextBoxFor(x=>x.Email,new{@class="form-control"} )
+                <br />
+                <label class="text-warning">Telefon</label>
+                @Html.TextBoxFor(x=>x.Phone,new{@class="form-control"} )
+                <br />
+                <label class="text-warning">Çikolata Dış Rengi</label>
+                @Html.TextBoxFor(x=>x.Phone,new{@class="form-control"} )
+                <br />
+                <label class="text-warning">Çikolata Dolgusu</label>
+                @Html.TextBoxFor(x=>x.filling,new{@class="form-control"} )
+                <br />
+                <label class="text-warning">Çikolata Adeti</label>
+                @Html.TextBoxFor(x=>x.piece,new{@class="form-control"} )
+                <br />
+                <label class="text-warning">Hangi Gün Alıcak</label>
+                @Html.TextBoxFor(x=>x.DateTime,new{@class="form-control"} )
+                <br />
+                <label class="text-warning">Hangi Saate alacak</label>
+                @Html.TextBoxFor(x=>x.Time,new{@class="form-control"} )
+                <br />
+                <label class="text-warning">Açıklama</label>
+                @Html.TextAreaFor(x=>x.description,new{@class="form-control"} )
+                <br />
+              
+             
+               
+              
+        </div>
+    </div>
+</div>
+}
+

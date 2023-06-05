@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.ColorCategory
+@{
+    ViewData["Title"] = "AddOurChocolate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="text-danger">Ürün Ekelem</h4>
+            <p class="card-description"> Yeni  Ürünü ekleme sayfası </p>
+            <form method="post" class=" form-group" action="AddOurChocolate"  enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputName1">Ürün Adı</label>
+                    <input type="text" class="form-control" id="exampleInputName1" name="title" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Ürün Açıklama</label>
+                    <input type="text" class="form-control" id="exampleInputName1" name="Description" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Ürün Açıklama</label>
+                    <input type="text" class="form-control" id="exampleInputName1" name="Image" placeholder="Resim Url">
+                </div>
+                          <div class="form-group">
+                    <label for="exampleInputCity1">Fiyat</label>
+                    <input type="text" class="form-control" id="exampleInputCity1" name="Price" placeholder="Location">
+                </div>
+              
+                <button type="submit" class="btn btn-gradient-primary me-2">Ekle</button>
+            
+            </form>
+        </div>
+    </div>
+</div>
+

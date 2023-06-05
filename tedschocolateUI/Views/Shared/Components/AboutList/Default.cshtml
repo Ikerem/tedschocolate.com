@@ -1,0 +1,38 @@
+﻿@model List<About>
+<section class="about_section layout_padding " id="AboutPage">
+    <div class="container  ">
+
+        @foreach (var item in Model)
+        {
+
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                @item.Title
+                            </h2>
+                        </div>
+                        <p>
+                            @item.Description
+                        </p>
+                        <a href="#">
+                            <span>
+                                create an order
+                            </span>
+                            <img src="~/chocolux-master/images/color-arrow.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="@item.ImageUrl" alt="">
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>

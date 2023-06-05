@@ -1,0 +1,52 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="text-danger">About Page</h4>
+            <p >
+              About Sayfasını düzenleyebilirsin 
+            </p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-info"> Başlık </th>
+                            <th class="text-info"> Açıklama </th>
+                            <th class="text-info"> Fotoğraf </th>
+
+
+                            <th class="text-info"> Düzenle </th>
+
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+
+
+                        <tbody>
+                            <tr>
+                                <td > @item.Title </td>
+
+                                <td> @item.Description.Substring(0, Math.Min(20, item.Description.Length))... </td>
+
+                                <td>
+                                    <img src=" @item.ImageUrl" height="250px" width="250px">
+                                </td>
+                                <td> <a href="/AdminAbout/EditAbout/@item.Aboutid" class="btn btn-inverse-success btn-fw">Düzenle</a> </td>
+                            </tr>
+
+                        </tbody>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Homepage
+@{
+    ViewData["Title"] = "EditHomePage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("EditHomePage", "AdminHomePage", FormMethod.Post))
+{
+    
+<div class="col-md-12 stretch-card">
+    <div class="card">
+        <div class="card-body">
+                <h4 class="text-danger">Ana Sayfa Güncelleme</h4>
+               
+                @Html.HiddenFor(x=>x.Homepageid)
+                <br />
+                <label class="text-warning">Başlık</label>
+                @Html.TextBoxFor(x=>x.Title,new{@class="form-control"})
+                <br />
+                <label class="text-warning">Açıklama</label>
+                @Html.TextAreaFor(x=>x.Description,10,3,new{@class="form-control"} )
+                <br />
+                <label class="text-warning">Resim</label>
+                <br />
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Model.ImageUrl" class="img-fluid" height="250px" width="250px">
+                }
+                @Html.TextAreaFor(x => x.ImageUrl, new { @class = "form-control" })
+                <br />
+                <button class="btn btn-gradient-success btn-rounded btn-fw">Güncelle</button>
+        </div>
+    </div>
+</div>
+}
+
+

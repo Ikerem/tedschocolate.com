@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Html.PartialAsync("/Views/Admin/Header.cshtml")
+<body>
+    <div class="container-scroller">
+        <!-- partial:~/PurpleAdmin-Free-Admin-Template-master/partials/_navbar.html -->
+        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <h4 style ="color:#5a2918"> TED’S CHOCOLATE</h4>
+            </div>
+            @await Html.PartialAsync("/Views/Admin/NavBar.cshtml")
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:~/PurpleAdmin-Free-Admin-Template-master/partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                @await Html.PartialAsync("/Views/Admin/SideBar.cshtml")
+            </nav>
+
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    @RenderBody()
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:~/PurpleAdmin-Free-Admin-Template-master/partials/_footer.html -->
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/PurpleAdmin-Free-Admin-Template-master/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="~/PurpleAdmin-Free-Admin-Template-master/assets/js/off-canvas.js"></script>
+    <script src="~/PurpleAdmin-Free-Admin-Template-master/assets/js/hoverable-collapse.js"></script>
+    <script src="~/PurpleAdmin-Free-Admin-Template-master/assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <!-- End custom js for this page -->
+</body>
+</html>

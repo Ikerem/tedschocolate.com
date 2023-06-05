@@ -1,0 +1,41 @@
+﻿@model List<Homepage>
+<section class="slider_section " id="HomePageList">
+    <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    @foreach (var item in Model)
+                    {
+                        
+                 
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="detail_box">
+                                <h1>
+                                 
+                                 
+                                       @item.Title
+                               
+                                </h1>
+
+                                    <p >
+                                    @item.Description
+                                </p>
+                                 
+                             
+                            </div>
+                        </div>
+                        <div class="col-md-4 ml-auto">
+                            <div class="img-box" >
+                                <img src="@item.ImageUrl" alt=""  >
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+           
+        </div>
+    </div>
+   
+</section>

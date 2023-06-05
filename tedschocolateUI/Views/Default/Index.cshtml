@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+
+@await Html.PartialAsync("HeaderPartial")
+
+<body>
+    <div class="hero_area">
+        <!-- header section strats -->
+        @await Html.PartialAsync("NavBarpartial")
+        <!-- end header section -->
+        <!-- slider section -->
+        @await Component.InvokeAsync("HomePageList")
+
+        <!-- end slider section -->
+    </div>
+    @await Component.InvokeAsync("AboutList")
+
+    <!-- fruits section -->
+    @await Component.InvokeAsync("OurChocolatesList")
+
+    <!-- end fruits section -->
+    <!-- tasty section -->
+    @await Component.InvokeAsync("DiscountList")
+    @await Component.InvokeAsync("ChocolateoptionsList")
+
+
+    <!-- end tasty section -->
+    <!-- contact section -->
+    @await Html.PartialAsync("Send")
+    <!-- end contact section -->
+    <!-- map section -->
+    <!-- end map section -->
+    @await Html.PartialAsync("FooterPartial")
+  
+
+    <!-- footer section -->
+  
+    @await Html.PartialAsync("ScriptPartial")
+
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+﻿@model EntityLayer.Concrete.OurChocolates
+@{
+    ViewData["Title"] = "EditOurChocolate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditOurChocolate", "AdminOurChocolatesList", FormMethod.Post))
+{
+
+    <div class="col-md-12 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="text-danger">Çikolata ürünleri   Güncelleme</h4>
+
+                @Html.HiddenFor(x=>x.OurChocolatesid)
+                <br />
+                <br />
+                <label class="text-warning">Başlık</label>
+                @Html.TextBoxFor(x=>x.title,new{@class="form-control"})
+                <br />
+                <br />
+                <label class="text-warning">Açıklama</label>
+                @Html.TextAreaFor(x=>x.Description,10,3,new{@class="form-control"} )
+                <br />
+                <br />
+                <label class="text-warning">Fiyat</label>
+                @Html.TextAreaFor(x=>x.Price,new{@class="form-control"} )
+                <br />
+                <label class="text-warning">Resim</label>
+                <br />
+                <br />
+                @if (!string.IsNullOrEmpty(Model.Image))
+                {
+                    <img src="@Model.Image" class="img-fluid" height="200px" width="200px">
+                } <br />
+                <br />
+                @Html.TextAreaFor(x => x.Image, new { @class = "form-control" })
+                <br />
+                <br />
+                <button class="btn btn-gradient-success btn-rounded btn-fw">Güncelle</button>
+            </div>
+        </div>
+    </div>
+}
+

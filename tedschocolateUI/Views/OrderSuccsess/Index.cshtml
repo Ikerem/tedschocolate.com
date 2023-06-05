@@ -1,0 +1,87 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            background: url('tedschocolateui/wwwroot/pushpak-dsilva-r-hqw_obfd0-unsplash.jpg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 40px 0;
+            font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 60px;
+            border-radius: 4px;
+            box-shadow: 0 2px 3px #C8D0D8;
+            margin: 0 auto;
+        }
+
+            .card i {
+                color: #008000;
+                font-size: 100px;
+                line-height: 200px;
+                margin-left: -15px;
+            }
+
+            .card h1 {
+                color: #008000;
+                font-weight: 900;
+                font-size: 40px;
+                margin-bottom: 10px;
+            }
+
+            .card p {
+                color: #404F5E;
+                font-size: 20px;
+                margin: 0;
+            }
+
+        .gradient-button {
+            background: transparent;
+            border: 2px solid #008000;
+            border-radius: 20px;
+            color: #008000;
+            font-size: 16px;
+            padding: 10px 75px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+            .gradient-button:hover {
+                background: #008000;
+                color: #FFFFFF;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div style="border-radius:200px; height:200px; width:200px; background: 	#ffffff; margin:0 auto;">
+                <i class="checkmark">✓</i>
+            </div>
+            <h1>Success</h1>
+            <p>We received your purchase request;<br /> We will contact you when we are ready!</p>
+            <br />
+            <a href="/Default/Index" class="gradient-button">Home Page</a>
+          
+
+        </div>
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@model List<Discount>
+
+<section class="offer_section layout_padding" id="DicountPage">
+    @foreach (var item in Model)
+    {
+        
+   
+    <div class="container">
+        <div class="box">
+            <div class="detail-box">
+                <h2>
+                    Offers on chocolates
+                </h2>
+                <h3>
+                    10% Discount on your first order
+                </h3>
+                <a href="">
+                    place an order
+                </a>
+            </div>
+            <div class="img-box">
+                <img src="@item.ImageUrl" alt="">
+            </div>
+        </div>
+        <div class="btn-box">
+            <a href="">
+                <span>
+                    See More
+                </span>
+                <img src="~/chocolux-master/images/color-arrow.png" alt="">
+            </a>
+        </div>
+    </div>
+    }
+</section>
