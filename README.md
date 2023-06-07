@@ -16,3 +16,4 @@ Entity Framework Core: Veritabanı işlemlerini yönetmek için kullanılır.
 HTML, CSS ve JavaScript: Arayüzün oluşturulmasında kullanılan web teknolojileri.
 Bootstrap: Responsive tasarım ve kullanıcı arayüzü için kullanılan CSS framework'ü.
 Identitiy Kütüphanesi
+
